@@ -1,0 +1,35 @@
+# Default values for wavefront-kubernetes-adapter.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+args:
+  prefix: kubernetes
+  relistInterval: 15m
+  logToStderr: true
+
+image:
+  repository: wavefronthq/wavefront-hpa-adapter
+  tag: 0.9.3
+  pullPolicy: IfNotPresent
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+resources: {}
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
+
+priorityClassName: foo
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
