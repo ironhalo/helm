@@ -7,8 +7,4 @@ metadata:
 {{ include "wavefront-kubernetes-adapter.labels" . | indent 4 }}
 data:
   config.yaml: |
-    rules:
-    - query: 'ts(azure.compute.vm.percentage.cpu)'
-      name: azure.vm.cpu
-    - query: 'ts(aws.sqs.approximatenumberofmessagesvisible)'
-      name: aws.sqs.messagesvisible
+    rules: {{- toYaml .Values.rules | nindent 4 }}
