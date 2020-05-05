@@ -12,6 +12,7 @@ rules:
   - namespaces
   - pods
   - services
+  - configmaps
   verbs:
   - get
   - list
