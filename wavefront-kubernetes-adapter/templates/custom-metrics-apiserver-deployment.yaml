@@ -13,6 +13,8 @@ spec:
       app: custom-metrics-apiserver
   template:
     metadata:
+      annotations:
+        checksum/config: {{ include (print $.Template.BasePath "/custom-metrics-config-map.yaml") . | sha256sum }}
       labels:
 {{ include "wavefront-kubernetes-adapter.labels" . | indent 8 }}
         app: custom-metrics-apiserver
